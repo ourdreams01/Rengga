@@ -495,35 +495,34 @@ Ayat ini menjelaskan tentang fitrah, yang dalam hadits disebutkan bahwa khitan a
 </script>
 <script>
   // set target tanggal
-const targetDate = new Date('2025-06-28T00:00:00').getTime();
+  const targetDate = new Date('2025-04-12T00:00:00').getTime();
 
-// update setiap detik
-const countdown = setInterval(() => {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+  // update setiap detik
+  const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-  // hitung hari, jam, menit, dan detik
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // hitung hari, jam, menit, dan detik
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // tampilkan hasil di elemen html
-  document.getElementById('hari').innerHTML = days;
-  document.getElementById('jam').innerHTML = hours;
-  document.getElementById('menit').innerHTML = minutes;
-  document.getElementById('detik').innerHTML = seconds;
+    // tampilkan hasil di elemen html
+    document.getElementById('hari').innerHTML = days;
+    document.getElementById('jam').innerHTML = hours;
+    document.getElementById('menit').innerHTML = minutes;
+    document.getElementById('detik').innerHTML = seconds;
 
-  // jika hitung mundur selesai
-  if (distance < 0) {
-    clearInterval(countdown);
-    document.getElementById('hari').innerHTML = "0";
-    document.getElementById('jam').innerHTML = "0";
-    document.getElementById('menit').innerHTML = "0";
-    document.getElementById('detik').innerHTML = "0";
-  }
-}, 1000);
-
+    // jika hitung mundur selesai
+    if (distance < 0) {
+      clearInterval(countdown);
+      document.getElementById('hari').innerHTML = "0";
+      document.getElementById('jam').innerHTML = "0";
+      document.getElementById('menit').innerHTML = "0";
+      document.getElementById('detik').innerHTML = "0";
+    }
+  }, 1000);
 </script>
 </body>
 
